@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div data-user="liquan" data-user-age="29"></div>
+<script>
+    var div = document.querySelector('div');
+    // 获取元素的自定义属性 h5的方式 dataset
+    var set = div.dataset;
+    console.log(set.user);
+    console.log(set.userAge);
+
+    set.user = 'lq';
+    console.log(set.user);
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul {
+            list-style: none;
+        }
+
+        li {
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            color: #fff;
+            background: green;
+            float: left;
+            cursor: pointer;
+        }
+
+        li.active {
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>菜单1</li>
+    <li class="active red">菜单2</li>
+    <li>菜单3</li>
+    <li>菜单4</li>
+</ul>
+<script>
+    window.onload = function () {
+        document.querySelector('ul').onclick = function (e) {
+            var currentLi = e.target;
+            if (currentLi.classList.contains('active')) return false;
+            document.querySelector('li.active').classList.remove('active');
+            currentLi.classList.add('active');
+        }
+    }
+</script>
+</body>
+</html>

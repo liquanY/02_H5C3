@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul {
+            list-style: none;
+        }
+
+        li {
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            color: #fff;
+            background: green;
+            float: left;
+            cursor: pointer;
+        }
+
+        li.active {
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>菜单1</li>
+    <li class="active red">菜单2</li>
+    <li>菜单3</li>
+    <li>菜单4</li>
+</ul>
+<button>切换类</button>
+<script>
+    var dom = document.querySelector('li:nth-child(2)');
+    /*1.获取类 DOM.classList 获取的是这个DOM元素上的所有class*/
+    console.log(dom.classList);
+    /*2.操作类*/
+    dom.classList.add('blue'); // add
+    dom.classList.remove('red'); // remove
+
+    document.querySelector('button').onclick = function () {
+        dom.classList.toggle('toggle'); // toggle
+        console.log(dom.classList.contains('toggle')); // contains
+    }
+</script>
+</body>
+</html>
