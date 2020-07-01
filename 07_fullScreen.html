@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 500px;
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <video width="500" src="video/trailer.mp4"></video>
+</div>
+<button class="btn1">全屏</button>
+<button class="btn2">取消全屏</button>
+<script>
+    document.querySelector('.btn1').onclick = function () {
+        // 全屏操作
+        // H5的API存在兼容问题
+
+        // 页面文档全屏
+        document.documentElement.webkitRequestFullScreen();
+    }
+    document.querySelector('.btn2').onclick = function () {
+        // 取消全屏 跟元素没有关系
+        document.webkitCancelFullScreen();
+    }
+</script>
+</body>
+</html>

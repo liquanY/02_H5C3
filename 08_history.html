@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button class="btn1">追加历史</button>
+<button class="btn2">替换当前历史</button>
+<script>
+    /*
+     * history.back()  去上一条历史
+     * history.forward()  去下一条历史
+     * history.go()  相对当前页面进行跳转 可以是 -1 0 1
+     *
+     * history.pushState()  浏览器不会向服务端请求数据 直接改变url地址
+     * history.replaceState()  仅仅是修改了对应的历史记录
+     * window.onpopstate = function(){}
+     * */
+
+    /*
+     * SPA
+     *   single page application 单页web应用
+     *   只有一张Web页面的应用 在使用期间不会重新加载页面
+     *   实现方案：
+     *     1. 哈希 hash (路由)
+     *     2. 历史追加
+     * */
+</script>
+<script>
+    document.querySelector('.btn1').onclick = function () {
+        history.pushState(null, null, 'test.html');
+    }
+    document.querySelector('.btn2').onclick = function () {
+        history.replaceState(null, null, '01_borderImage.html');
+    }
+
+    window.onpopstate = function () {
+        console.log(location.pathname);
+    }
+</script>
+</body>
+</html>
